@@ -1,0 +1,30 @@
+*{
+    background-color: #212529;
+}
+
+header{
+    color: #212529;
+}
+
+html, body { 
+    min-height: 100%; 
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1{
+    text-align: right;
+    color: white;
+}
+
+col, table tr{
+    color: whitesmoke
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: rgb(161, 36, 61);
+    color: whitesmoke
+  }
