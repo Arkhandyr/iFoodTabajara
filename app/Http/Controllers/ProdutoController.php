@@ -104,6 +104,13 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+
+        if(isset($produto)) {
+            $produto->delete();
+            return \Redirect::route('produto');
+        }
+
+        echo "Produto não encontrado";
     }
 }

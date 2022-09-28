@@ -49,10 +49,11 @@ class TipoProdutoController extends Controller
 
     public function edit($id)
     {
-        $tipoProduto = TipoProduto::find(1);
+        $tipoProduto = TipoProduto::find($id);
 
         if(isset($tipoProduto)) {
-            return view("TipoProduto/edit")->with("tipoProduto", $tipoProduto);
+            return view("TipoProduto/edit")
+                ->with("tipoProduto", $tipoProduto);
         }
         //TODO: implementar tratamento de exceptions
         echo "TipoProduto não encontrado";
@@ -65,7 +66,7 @@ class TipoProdutoController extends Controller
         // Dentro dessa variável eu já tenho o produto que eu quero atualizar
 
         // Pergunto se o obj é válido ou null (se ele existe)
-        if( isset($tipoProduto) ){
+        if(isset($tipoProduto) ){
             $tipoProduto->descricao = $request->descricao;
             $tipoProduto->update();
             // Recarregar a view index.
@@ -77,6 +78,13 @@ class TipoProdutoController extends Controller
 
     public function destroy($id)
     {
-        //
+        $tipoProduto = TipoProduto::find($id);
+
+        if(isset($tipoProduto)) {
+            $tipoProduto->delete();
+            return \Redirect::route('tipoproduto');
+        }
+
+        echo "Produto não encontrado";
     }
 }

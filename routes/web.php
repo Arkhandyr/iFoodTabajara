@@ -9,11 +9,13 @@ Route::get('/', function () {
 
 Route::resource('tipoprodutos', "App\Http\Controllers\TipoProdutoController", [
     'names' => [
-        'index' => 'tipoprodutos',
+        'index' => 'tipoproduto',
         'create' => 'tipoproduto.create',
         'store' => 'tipoproduto.store',
         'show' => 'tipoproduto.show',
-        'edit' => 'tipoproduto.edit'
+        'edit' => 'tipoproduto.edit',
+        'update' => 'tipoproduto.update',
+        'destroy' => 'tipoproduto.destroy'
     ]
 ]);
 
@@ -23,6 +25,8 @@ Route::resource('produtos', "App\Http\Controllers\ProdutoController", [
         'create' => 'produto.create',
         'store' => 'produto.store',
         'show' => 'produto.show',
-        'edit' => 'produto.edit'
+        'edit' => 'produto.edit',
+        'update' => 'produto.update',
+        'destroy' => 'produto.destroy'
     ]
 ]);
