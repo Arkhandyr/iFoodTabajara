@@ -60,4 +60,15 @@
         </div>
         </div>
     </div>
+
+    <!-- Alert -->
+    {{-- <?php $message = ["Mensagem a ser exibida, "danger"] ?> --}}
+
+    @if (isset($message))
+        <div class="alert alert-{{$message[1]}} alert-dismissible fade show" role="alert">
+            <span>{{$message[0]}}</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+    @endif
+    
 @endsection

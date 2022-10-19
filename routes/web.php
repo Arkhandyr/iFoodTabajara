@@ -30,3 +30,14 @@ Route::resource('produtos', "App\Http\Controllers\ProdutoController", [
         'destroy' => 'produto.destroy'
     ]
 ]);
+
+Route::resource('userinfos', "App\Http\Controllers\UserInfoController", [
+    'names' => [
+        'create' => 'userinfo.create',
+        'store' => 'userinfo.store',
+        'show' => 'userinfo.show',
+        'edit' => 'userinfo.edit',
+        'update' => 'userinfo.update',
+        'destroy' => 'userinfo.destroy'
+    ]
+]);
