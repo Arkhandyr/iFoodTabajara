@@ -41,3 +41,19 @@ Route::resource('userinfos', "App\Http\Controllers\UserInfoController", [
         'destroy' => 'userinfo.destroy'
     ]
 ]);
+
+Route::resource('enderecos', "App\Http\Controllers\EnderecoController", [
+    'names' => [
+        'index' => 'endereco',
+        'create' => 'endereco.create',
+        'store' => 'endereco.store',
+        'show' => 'endereco.show',
+        'edit' => 'endereco.edit',
+        'update' => 'endereco.update',
+        'destroy' => 'endereco.destroy'
+    ]
+]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

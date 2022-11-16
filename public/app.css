@@ -27,4 +27,8 @@ col, table tr{
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color: rgb(161, 36, 61);
     color: whitesmoke
-  }
+}
+
+em {
+    color: rgb(161, 36, 61);
+}

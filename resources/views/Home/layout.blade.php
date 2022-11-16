@@ -27,41 +27,38 @@
                         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                             <li>
                                 <a href="/" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#home" />
-                                    </svg>
                                     Home
                                 </a>
                             </li>
-                            <li>
+                            <li class="my-auto">
                                 <a href="{{route('tipoproduto')}}" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#table" />
-                                    </svg>
                                     TipoProdutos
                                 </a>
                             </li>
                             <li>
                                 <a href="{{route('produto')}}" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#grid" />
-                                    </svg>
                                     Produtos
                                 </a>
                             </li>
                             <li>
                                 <a href="{{route('userinfo.create')}}" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#grid" />
-                                    </svg>
                                     Info. de Usuário
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('endereco')}}" class="nav-link text-white">
+                                    Endereços
                                 </a>
                             </li>
                         </ul>
 
                         <div class="text-end">
-                            <button type="button" class="btn btn-light text-dark me-2">Login</button>
-                            <button type="button" class="btn btn-primary">Sign-up</button>
+                            @if (Auth::check())
+                                <a class="btn btn-outline disabled">Logado como <em>{{Auth::user()->name}}</em></a>
+                            @else
+                                <a href="{{route("login")}}" class="btn btn-secondary">Login</a>
+                                <a href="{{route("register")}}" class="btn btn-primary">Cadastrar</a>
+                            @endif
                         </div>
                     </div>
                 </div>
